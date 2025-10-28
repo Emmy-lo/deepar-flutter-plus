@@ -20,6 +20,20 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8*/
     }
 
+    defaultConfig {
+
+        externalNativeBuild {
+            cmake {
+                arguments '-DANDROID_SUPPORT_FLEXIBLE_PAGE_SIZES=ON'
+            }
+        }
+
+        ndk {
+            abiFilters 'x86', 'x86_64', 'armeabi-v7a', 'arm64-v8a'
+        }
+
+    }
+
 
     kotlinOptions {
 
